@@ -4,7 +4,7 @@
   export let project: IProject;
 </script>
 
-<div class="col-md-6 text-center d-flex align-items-center info child">
+<div class="col-12 col-md-6 text-center d-flex align-items-center info child">
   <div>
     <h5>{project.title}</h5>
     <div class="text-muted">

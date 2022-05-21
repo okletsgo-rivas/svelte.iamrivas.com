@@ -6,7 +6,7 @@
 
 <div
   style={`background-image: url(//d9.iamrivas.com${project.field_image})`}
-  class="col-md-6 full child"
+  class="col-12 col-md-6 full child"
 />
 
 <style>

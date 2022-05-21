@@ -95,25 +95,21 @@
   ];
 </script>
 
-<main>
-  <div class="container bio">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="card p-4">
-          <h1 class="mb-5">Resume</h1>
-          {#each jobs as job}
-            <div class="mb-4">
-              <h3>{job.company}</h3>
-              <p>
-                <em> {job.title} - {job.location} </em>
-                <br />
-                <em>{job.dates}</em>
-              </p>
-              <p>{job.desc}</p>
-            </div>
-          {/each}
+<div class="container bio">
+  <div class="row">
+    <div class="card p-4">
+      <h1 class="mb-5">Resume</h1>
+      {#each jobs as job}
+        <div class="mb-4">
+          <h3>{job.company}</h3>
+          <p>
+            <em> {job.title} - {job.location} </em>
+            <br />
+            <em>{job.dates}</em>
+          </p>
+          <p>{job.desc}</p>
         </div>
-      </div>
+      {/each}
     </div>
   </div>
-</main>
+</div>

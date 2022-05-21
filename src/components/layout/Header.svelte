@@ -7,7 +7,7 @@
 <svelte:window on:scroll={() => (scrolled = window.scrollY > 100)} />
 
 <nav class="navbar navbar-expand-md sticky-top" class:scrolled>
-  <div class="container">
+  <div class="container p-0">
     <div>
       <a class="navbar-brand" href="/">
         <img src="./logo.svg" alt="logo" />
@@ -18,26 +18,29 @@
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarToggler"
-        aria-controls="navbarToggler"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon" />
       </button>
-      <div class="collapse navbar-collapse ml-auto" id="navbar-nav">
-        <div class="ml-auto navbar-nav">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
           {#each links as link}
-            <Link
-              to={link}
-              getProps={({ isCurrent }) => ({
-                class: "nav-link " + (isCurrent && "text-primary"),
-              })}
-            >
-              {link}
-            </Link>
+            <li class="nav-item">
+              <Link
+                to={link}
+                getProps={({ isCurrent }) => ({
+                  class: "nav-link " + (isCurrent && "text-primary"),
+                })}
+              >
+                {link}
+              </Link>
+            </li>
           {/each}
-        </div>
+        </ul>
       </div>
     </div>
   </div>
