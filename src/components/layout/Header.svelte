@@ -28,7 +28,12 @@
       <div class="collapse navbar-collapse ml-auto" id="navbar-nav">
         <div class="ml-auto navbar-nav">
           {#each links as link}
-            <Link to={link} class="nav-link">
+            <Link
+              to={link}
+              getProps={({ isCurrent }) => ({
+                class: "nav-link " + (isCurrent && "text-primary"),
+              })}
+            >
               {link}
             </Link>
           {/each}

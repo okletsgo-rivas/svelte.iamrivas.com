@@ -9,14 +9,19 @@
   let error = null;
 
   onMount(async () => {
-    const res = await fetch("https://d9.iamrivas.com/json/projects2");
-    $projects = await res.json();
-    console.log($projects);
+    try {
+      const res = await fetch("https://d9.iamrivas.com/json/projects2");
+      $projects = await res.json();
+    } catch (e: any) {
+      error = e.message;
+    }
   });
+
+  async function fetchProjects() {}
 </script>
 
-<main>
-  <div v-if="!projects" class="container">
+<div class="container projects">
+  {#await fetchProjects()}
     <div class="row">
       <div class="col">
         {#if error}
@@ -28,8 +33,7 @@
         {/if}
       </div>
     </div>
-  </div>
-  <div v-else class="container projects">
+  {:then}
     <div class="row filters">
       <div class="col-xs-12 w-100">
         <ProjectFilter />
@@ -37,10 +41,18 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        {#each $projects as project}
-          <Project {project} />
+        {#each $projects as project, i}
+          <Project {project} isEven={i % 2 > 0} />
         {/each}
       </div>
     </div>
-  </div>
-</main>
+  {:catch}
+    <div class="row">
+      <div class="col">
+        <div class="alert alert-danger" role="alert">
+          Error: {{ error }}
+        </div>
+      </div>
+    </div>
+  {/await}
+</div>

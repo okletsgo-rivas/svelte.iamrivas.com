@@ -7,12 +7,10 @@
   export let isEven: boolean;
 </script>
 
-<main>
-  <div class="d-flex project">
-    {#if isEven} <ProjectInfo {project} /> {/if}
+<div class="d-flex project">
+  {#if isEven} <ProjectInfo {project} /> {/if}
 
-    <ProjectImage />
+  <ProjectImage {project} />
 
-    {#if !isEven} <ProjectInfo {project} /> {/if}
-  </div>
-</main>
+  {#if !isEven} <ProjectInfo {project} /> {/if}
+</div>
