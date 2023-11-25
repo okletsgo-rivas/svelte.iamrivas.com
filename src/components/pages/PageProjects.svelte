@@ -11,7 +11,7 @@
   onMount(async () => {
     if ($projects.length == 0) {
       try {
-        const res = await fetch("https://d9.iamrivas.com/json/projects2");
+        const res = await fetch("https://d10.iamrivas.com/json/projects2");
         $projects = await res.json();
       } catch (e: any) {
         error = e.message;
