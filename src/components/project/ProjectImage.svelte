@@ -5,7 +5,7 @@
 </script>
 
 <div
-  style={`background-image: url(//d9.iamrivas.com${project.field_image})`}
+  style={`background-image: url(//d10.iamrivas.com${project.field_image})`}
   class="col-12 col-md-6 full child"
 />
 

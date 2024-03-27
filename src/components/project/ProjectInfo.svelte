@@ -22,7 +22,7 @@
       {/if}
     </div>
     <div
-      style={`background-image:url(//d9.iamrivas.com${project.field_image})`}
+      style={`background-image:url(//d10.iamrivas.com${project.field_image})`}
       class="thumb"
     />
   </div>
